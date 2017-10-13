@@ -1,0 +1,8 @@
+<%= simple_form_for @video, :html => {:multipart => true} do |v| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+	<%= v.file_field :video_img%>
+	<%= v.input :name %>
+	<%= v.input :description, label: "Video Name"  %>
+	<%= v.input :director %>
+	<%= v.button :submit, :class => "btn-custom2" %>
+<% end %>

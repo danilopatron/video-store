@@ -1,0 +1,21 @@
+<h1 class="current-category"><%= params[:category] %></h1>
+<% if @videos.count == 0 %>
+
+	<h1>There are no videos in this category</h1>
+
+<% else %>
+	
+	<div class="row">
+		<% @videos.each do |v| %>
+			
+			<div class="col-md-3">
+				<a href="/videos/<%= v.id %>">
+					<%= image_tag v.video_img.url(:video_index), class: "video" %>
+				</a>
+				<!--<h2><% link_to v.name, video_path(v) %></h2> -->
+			</div>
+
+		<% end %>
+	</div>
+
+<% end %>
